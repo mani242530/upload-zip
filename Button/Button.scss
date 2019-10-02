@@ -1,0 +1,174 @@
+@import 'node_modules/web-andromeda/src/variables';
+
+.Button {
+    border-radius: 5px;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+    text-transform: capitalize;
+
+    &:focus {
+      outline:none
+    }
+
+    .Loader svg {
+      height: 24px;
+      width: 24px;
+      g{
+        circle{
+          fill: $neutral-10;
+          width: 10%;
+        }
+      }
+    }
+      // Button sizing
+      &--large {
+        font-size: 16px;
+        height: 48px;
+        padding: $button20-padding-large; // Padding is 1/2 the button height
+        min-width: 148px;
+      }
+
+      &--medium {
+        font-size: 14px;
+        height: 40px;
+        padding: $button20-padding-medium; // Padding is 1/2 the button height
+        min-width: 132px;
+      }
+
+      &--small {
+        font-size: 12px;
+        height: 32px;
+        padding: $button20-padding-small; // Padding is 1/2 the button height
+        min-width: 124px;
+      }
+
+      // Button styling
+      &__primary {
+        background-color: $magenta-50;
+        color: $neutral-10;
+        transition: all ease-in-out .1s;
+        border: none;
+
+          &:hover {
+            background-color: $magenta-60;
+            cursor: pointer;
+          }
+
+          &:active {
+            background-color: $magenta-70;
+          }
+
+          &:disabled {
+            cursor: not-allowed;
+            background-color: $neutral-50;
+          }
+      }
+
+      &__secondary {
+        color: $magenta-50;
+        background-color: $neutral-10;
+        border: 1px solid $magenta-50;
+        transition: all ease-in-out .1s;
+
+          &:hover {
+            color: $magenta-60;
+            border-color: $magenta-10;
+            background-color: $magenta-10;
+            cursor: pointer;
+          }
+
+          &:active {
+            background-color: $magenta-20;
+            border-color: $magenta-20;
+          }
+          &:disabled {
+            cursor: not-allowed;
+            background-color: $neutral-10;
+            border-color: $neutral-50;
+            color: $neutral-50;
+          }
+
+          .Loader svg {
+            g{
+              circle{
+                fill: $magenta-60;
+              }
+            }
+          }
+      }
+
+      &__tertiary {
+        color: $neutral-80;
+        background-color: $neutral-10;
+        border: 1px solid $neutral-80;
+        transition: all ease-in-out .1s;
+
+
+          &:hover {
+            color: $neutral-90;
+            border-color: $neutral-40;
+            background-color: $neutral-40;
+            cursor: pointer;
+          }
+
+          &:active {
+            background-color: $neutral-50;
+            border-color: $neutral-50;
+          }
+
+          &:disabled {
+            cursor: not-allowed;
+            background-color: $neutral-10;
+            border-color: $neutral-50;
+            color: $neutral-50;
+          }
+
+      }
+
+
+      &__ghost {
+        color: $neutral-80;
+        background-color: transparent;
+        border: none;
+        transition: all ease-in-out .1s;
+        min-width: auto;
+
+          &:hover {
+            color: $neutral-90;
+            background-color: $neutral-40;
+            cursor: pointer;
+          }
+
+          &:active {
+            background-color: $neutral-50;
+          }
+
+          &:disabled {
+            cursor: not-allowed;
+            color: $neutral-50;
+          }
+
+      }
+
+      &__icon {
+        padding: 0;
+        margin: 0;
+        background-color: transparent;
+        border-color: transparent;
+      }
+      &__link {
+        padding: 0;
+        margin: 0;
+        height:auto;
+        min-width: auto;
+        background-color: transparent;
+        border-color: transparent;
+      }
+
+      &--block {
+        display: block;
+        width: 100%;
+      }
+
+  }
