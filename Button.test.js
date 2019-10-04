@@ -108,14 +108,67 @@ describe( '<Button />tests', () => {
       component = mount( <Button type='reset' /> );
       expect( component.find( 'button' ).props().type ).toEqual( 'reset' );
     } );
-    btnStyle: PropTypes.oneOf( ['primary', 'secondary', 'tertiary', 'ghost', 'icon', 'link'] ),
+      
+      it( 'renders the btnType  as the type attribute of the element', () => {
+      component = mount( <Button btnStyle='primary' /> );
+      expect( component.find( 'button' ).props().btnStyle ).toEqual( 'primary' );
+    } );
+    
+     it( 'renders the btnType  as the type attribute of the element', () => {
+      component = mount( <Button btnStyle='secondary' /> );
+      expect( component.find( 'button' ).props().btnStyle ).toEqual( 'secondary' );
+    } );
+    
+     it( 'renders the btnType  as the type attribute of the element', () => {
+      component = mount( <Button btnStyle='tertiary' /> );
+      expect( component.find( 'button' ).props().btnStyle ).toEqual( 'tertiary' );
+    } );
+    
+     it( 'renders the btnType  as the type attribute of the element', () => {
+      component = mount( <Button btnStyle='ghost' /> );
+      expect( component.find( 'button' ).props().btnStyle ).toEqual( 'ghost' );
+    } );
+    
+     it( 'renders the btnType  as the type attribute of the element', () => {
+      component = mount( <Button btnStyle='icon' /> );
+      expect( component.find( 'button' ).props().btnStyle ).toEqual( 'icon' );
+    } );
+    
+     it( 'renders the btnType  as the type attribute of the element', () => {
+      component = mount( <Button btnStyle='link' /> );
+      expect( component.find( 'button' ).props().btnStyle ).toEqual( 'link' );
+    } );
+      
+       it( 'renders the btnType  as the type attribute of the element', () => {
+      component = mount( <Button size='small' /> );
+      expect( component.find( 'button' ).props().size ).toEqual( 'small' );
+    } );
+    
+     it( 'renders the btnType  as the type attribute of the element', () => {
+      component = mount( <Button size='medium' /> );
+      expect( component.find( 'button' ).props().size ).toEqual( 'medium' );
+    } );
+    
+     it( 'renders the btnType  as the type attribute of the element', () => {
+      component = mount( <Button size='large' /> );
+      expect( component.find( 'button' ).props().size ).toEqual( 'large' );
+    } );
+    
+    
+    it('check props class displayed', () => {  
+      component = mount( <Button class='button' /> );
+      expect( component.find( 'button' ).props().class ).toEqual( 'button' );
+    });
+    
+    it('render button correctly with null value', () => {  
+      component = mount( <Button size='null' /> );
+      expect( component.find( 'button' ).props().size ).toEqual( null );
+    
   } );
 
 
 } );
-
-
-
+  
 describe( 'snapshot tests', () => {
   it( 'renders correctly with the default props', () => {
     const buttonComponent = renderer
@@ -123,10 +176,31 @@ describe( 'snapshot tests', () => {
       .toJSON();
     expect( buttonComponent ).toMatchSnapshot();
   } );
+  
+  it('check the props displayed', () => {  
+    const buttnComponent = renderer
+      .create( <Button class='reset' /> )
+      .toJSON();
+   expect( buttnComponent ).toMatchSnapshot();
+  });
 
   it( 'renders correctly with the `type` property set', () => {
     const buttnComponent = renderer
       .create( <Button type='submit' /> )
+      .toJSON();
+    expect( buttnComponent ).toMatchSnapshot();
+  } );
+  
+  it( 'renders correctly with the `type` property set', () => {
+    const buttnComponent = renderer
+      .create( <Button type='reset' /> )
+      .toJSON();
+    expect( buttnComponent ).toMatchSnapshot();
+  } );
+  
+  it( 'renders correctly with the `type` property set', () => {
+    const buttnComponent = renderer
+      .create( <Button type='button' /> )
       .toJSON();
     expect( buttnComponent ).toMatchSnapshot();
   } );
@@ -139,6 +213,26 @@ describe( 'snapshot tests', () => {
       .toJSON();
     expect( buttonComponent ).toMatchSnapshot();
   } );
+  
+  it('reners with all props every time', () => {
+  const buttonComponent = renderer
+      .create( <Button btnStyle='primary'
+                size: 'small'
+                block: true,
+                disabled: true,
+                showLoader: true,
+                tabIndex: '1',
+                id: 'buttonComponent',
+                dataNavDescription: 'button description,
+                ariaPressed: true,
+                ariaLabel: true,
+                ariaSelected: true,
+                ariaControls: 'aria',
+                srOnly: true
+              /> )
+      .toJSON();  
+      expect(user).toMatchSnapshot();
+  });
 
 } );
 
